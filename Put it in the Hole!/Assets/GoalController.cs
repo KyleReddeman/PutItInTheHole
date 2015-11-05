@@ -14,6 +14,7 @@ public class GoalController : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        Application.LoadLevel("level_1");
     }
 }

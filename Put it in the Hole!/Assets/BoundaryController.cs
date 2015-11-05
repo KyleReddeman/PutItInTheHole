@@ -14,6 +14,6 @@ public class BoundaryController : MonoBehaviour {
 	}
     void OnTriggerExit2D(Collider2D other)
     {
-        Time.timeScale = 0;
+        Application.LoadLevel("level_1");
     }
 }
