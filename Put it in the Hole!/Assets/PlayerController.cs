@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Start () {
 	    sun = GameObject.Find("Sun");
+       // this.GetComponent<DistanceJoint2D>().anchor.Set(sun.transform.position.x, sun.transform.position.y);
     }
 
     // Update is called once per frame
@@ -23,17 +24,18 @@ public class PlayerController : MonoBehaviour {
         // transform.Translate(Vector3.up * Time.deltaTime, Space.World);
         if (hasShot == false)
         {
-            
-            transform.RotateAround(sun.transform.position, Vector3.forward, speed * Time.deltaTime);
+            rb.velocity = new Vector2(-y, x) * speed * Time.deltaTime;
             x = transform.position.x - sun.transform.position.x;
             y = transform.position.y - sun.transform.position.y;
         }
         else
         {
-                transform.Translate(new Vector3(-y, x) * 3 * Time.deltaTime , Space.World);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) this.)
         {
+
+            Destroy(this.GetComponent<DistanceJoint2D>());
+            rb.velocity = new Vector2(-y, x) * speed * Time.deltaTime;
             hasShot = true;
         }
         
